@@ -3,6 +3,7 @@ export interface Key {
 	isBlackKey: boolean
 	espacio: boolean
 	number: number
+	father?: number
 }
 
 export type Keys = Key[]
