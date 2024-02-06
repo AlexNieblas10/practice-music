@@ -9,8 +9,8 @@ export interface Key {
 export type Keys = Key[]
 
 export enum KeySheetMusic {
-	"G",
-	"F",
+	"G" = "G",
+	"F" = "F",
 }
 
 export enum BlackOrWhite {
@@ -18,16 +18,11 @@ export enum BlackOrWhite {
 	"BLACK",
 }
 
-export interface PartituraProps {
-	musicSheet: KeySheetMusic
-	currentKey: number
-}
-
 export interface PianoKey {
-	name: string
+	readonly name: string
 	blackOrWhite: BlackOrWhite
 	number: number
-	selected: boolean
+	selected: boolean | null
 }
 
 export type Piano = PianoKey[]

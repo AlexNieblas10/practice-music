@@ -1,34 +1,32 @@
 import { FKeys } from "../utils/FKeys"
 import { GKeys } from "../utils/GKeys"
-import {
-	KeySheetMusic,
-	Keys,
-	Key,
-	PartituraProps,
-} from "../../interfacesAndTypes"
-import { useEffect, useState } from "react"
+import { KeySheetMusic, Key } from "../../interfacesAndTypes"
+import { useContext, useEffect, useState } from "react"
 import { selectItem } from "../utils/selectItemSheetMusic"
 import { selectImageSheetMusic } from "../utils/selectImageSheetMusic"
+import { MusicContext } from "../context/PianoAndSheetMusicContext"
 
-export const Partitura = ({ musicSheet, currentKey }: PartituraProps) => {
-	const [currentSheetMusic, setCurrentSheetMusic] = useState({} as Keys)
+export const Partitura = () => {
 	const [individualKey, setIndividualKey] = useState({} as Key)
+
+	const { musicSheet, note, musicSheetKeys, setMusicSheetKeys } =
+		useContext(MusicContext)
 
 	useEffect(() => {
 		if (musicSheet === KeySheetMusic.G) {
-			setCurrentSheetMusic(GKeys)
+			setMusicSheetKeys(GKeys)
 		} else {
-			setCurrentSheetMusic(FKeys)
+			setMusicSheetKeys(FKeys)
 		}
-		setIndividualKey(currentSheetMusic[currentKey])
-	}, [musicSheet, currentKey, currentSheetMusic])
+		setIndividualKey(musicSheetKeys[note])
+	}, [musicSheet, musicSheetKeys, note, setMusicSheetKeys])
 
 	return (
 		<article className="max-w-[600px] min-w-96  relative">
-			{currentSheetMusic.length > 0 && (
+			{musicSheetKeys.length > 0 && (
 				<>
 					<aside className="flex flex-col w-full items-center">
-						{currentSheetMusic.map((key) => selectItem(key, individualKey))}
+						{musicSheetKeys.map((key) => selectItem(key, individualKey))}
 					</aside>
 					{selectImageSheetMusic(musicSheet)}
 				</>
