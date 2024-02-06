@@ -1,3 +1,3 @@
 export function getNote() {
-	return Math.ceil(Math.random() * 32)
+	return Math.ceil(Math.random() * 31)
 }
