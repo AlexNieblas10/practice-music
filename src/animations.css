@@ -1,0 +1,24 @@
+.goodAnimation {
+	animation-name: correctAnswer;
+	animation-direction: alternate;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+}
+
+.badAnimation {
+	animation-name: badAnswer;
+	animation-direction: alternate;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes correctAnswer {
+	50% {
+		background-color: rgb(77, 180, 77);
+	}
+}
+@keyframes badAnswer {
+	50% {
+		background-color: rgb(180, 77, 77);
+	}
+}
