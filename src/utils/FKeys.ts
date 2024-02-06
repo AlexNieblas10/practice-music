@@ -3,8 +3,8 @@ import { type Keys } from "../../interfacesAndTypes"
 export const FKeys: Keys = [
 	{ name: "F#", espacio: false, number: 32, isBlackKey: true, father: 31 },
 	{ name: "F", espacio: true, number: 31, isBlackKey: false },
-	{ name: "E#", espacio: false, number: 30, isBlackKey: true, father: 29 },
-	{ name: "E", espacio: false, number: 29, isBlackKey: false },
+	{ name: "E", espacio: false, number: 30, isBlackKey: false },
+	{ name: "D#", espacio: false, number: 29, isBlackKey: true, father: 28 },
 	{ name: "D", espacio: true, number: 28, isBlackKey: false },
 	{ name: "C#", espacio: false, number: 27, isBlackKey: true, father: 26 },
 	{ name: "C", espacio: false, number: 26, isBlackKey: false },
