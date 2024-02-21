@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { KeySheetMusic } from "../../interfacesAndTypes"
 import { setKey } from "../utils/setKey"
 import { MusicContext } from "../context/PianoAndSheetMusicContext"
+import { Link } from "react-router-dom"
 
 export const NavegationGame = () => {
 	const { setMusicSheet } = useContext(MusicContext)
@@ -13,9 +14,9 @@ export const NavegationGame = () => {
 			>
 				Change key
 			</button>
-			<button className="w-2/6 md:w-1/2 min-w-44 bg-slate-300 hover:bg-slate-500 transition-colors duration-500 rounded-md p-2">
+			<Link to={"/"} className="w-2/6 md:w-1/2 min-w-44 bg-slate-300 hover:bg-slate-500 transition-colors duration-500 rounded-md p-2">
 				Go to menu
-			</button>
+			</Link>
 		</article>
 	)
 }
