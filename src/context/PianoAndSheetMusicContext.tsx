@@ -12,6 +12,8 @@ interface Context {
 	setMusicSheetKeys: React.Dispatch<React.SetStateAction<Keys>>
 	piano: Piano
 	setPiano: React.Dispatch<React.SetStateAction<Piano>>
+	sustainNote: boolean
+	setSustainNotes: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const MusicContext = createContext({} as Context)
@@ -25,6 +27,7 @@ export const PianoAndSheetMusicContext = ({
 	const [musicSheet, setMusicSheet] = useState("" as KeySheetMusic)
 	const [musicSheetKeys, setMusicSheetKeys] = useState({} as Keys)
 	const [piano, setPiano] = useState(pianoKeys)
+	const [sustainNote, setSustainNotes] = useState(true)
 
 	return (
 		<MusicContext.Provider
@@ -37,6 +40,8 @@ export const PianoAndSheetMusicContext = ({
 				setMusicSheet,
 				musicSheetKeys,
 				setMusicSheetKeys,
+				sustainNote,
+				setSustainNotes 
 			}}
 		>
 			{children}
