@@ -9,7 +9,7 @@ import { MusicContext } from "../context/PianoAndSheetMusicContext"
 export const Partitura = () => {
 	const [individualKey, setIndividualKey] = useState({} as Key)
 
-	const { musicSheet, note, musicSheetKeys, setMusicSheetKeys } =
+	const { musicSheet, note, setNote, sustainNote, musicSheetKeys, setMusicSheetKeys } =
 		useContext(MusicContext)
 
 	useEffect(() => {
@@ -26,7 +26,7 @@ export const Partitura = () => {
 			{musicSheetKeys.length > 0 && (
 				<>
 					<aside className="flex flex-col w-full items-center">
-						{musicSheetKeys.map((key) => selectItem(key, individualKey))}
+						{musicSheetKeys.map((key) => selectItem(key, individualKey, sustainNote, setNote))}
 					</aside>
 					{selectImageSheetMusic(musicSheet)}
 				</>

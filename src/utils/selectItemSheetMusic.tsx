@@ -1,7 +1,8 @@
 import { Key } from "../../interfacesAndTypes"
 import { Note } from "../components/Note"
+import { getNote } from "./getNote"
 
-export function selectItem(key: Key, individualKey: Key) {
+export function selectItem(key: Key, individualKey: Key, sustainNote:boolean, setNote: React.Dispatch<React.SetStateAction<number>>) {
 	let visible: boolean
 	key === individualKey ? (visible = true) : (visible = false)
 
@@ -10,6 +11,9 @@ export function selectItem(key: Key, individualKey: Key) {
 		? (father = individualKey.father)
 		: (father = 0)
 
+	if(!sustainNote && father !== 0){
+		setNote(getNote())
+	}
 	if (key.espacio) {
 		return (
 			<div
