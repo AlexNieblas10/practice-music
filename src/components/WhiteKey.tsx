@@ -15,7 +15,7 @@ export const WhiteKey = ({ pianoInfo }: { pianoInfo: PianoKey }) => {
 					: pianoInfo.selected === false
 					? "badAnimation"
 					: ""
-			} w-16 h-48 border-y-2 border-r-2 first:border-l-2 border-black`}
+			} w-16 cursor-pointer h-48 border-y-2 border-r-2 first:border-l-2 border-black`}
 		></div>
 	)
 }
